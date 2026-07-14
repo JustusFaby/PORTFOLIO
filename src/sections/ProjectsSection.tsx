@@ -19,9 +19,10 @@ const PROJECTS: Project[] = [
     category: 'Personal',
     stack: ['AWS EKS', 'Terraform', 'ArgoCD', 'Helm', 'Jenkins', 'IAM/IRSA'],
     github: 'https://github.com/JustusFaby/Exercise-16-Build-a-Production-EKS-Platform',
-    col1Image1: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=840&q=80',
-    col1Image2: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=840&q=80',
-    col2Image: 'https://images.unsplash.com/photo-1640158615573-cd28feb1bf4e?w=840&q=80',
+    // Kubernetes cluster topology + Terraform IaC code + CI/CD pipeline terminal
+    col1Image1: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=840&q=80',
+    col1Image2: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=840&q=80',
+    col2Image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=840&q=80',
   },
   {
     number: '02',
@@ -29,9 +30,10 @@ const PROJECTS: Project[] = [
     category: 'Personal',
     stack: ['Prometheus', 'Grafana', 'Loki', 'Amazon EKS', 'AWS S3'],
     github: 'https://github.com/JustusFaby/Exercise-25-Observability-Platform-Deployment',
+    // Analytics/monitoring dashboard + dark metrics screen + data visualization
     col1Image1: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=840&q=80',
-    col1Image2: 'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=840&q=80',
-    col2Image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=840&q=80',
+    col1Image2: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=840&q=80',
+    col2Image: 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=840&q=80',
   },
   {
     number: '03',
@@ -39,9 +41,10 @@ const PROJECTS: Project[] = [
     category: 'Personal',
     stack: ['AWS Lambda', 'Transcribe', 'ECS Fargate', 'Amplify', 'Textract', 'Cognito', 'Groq AI'],
     github: 'https://github.com/JustusFaby/serverless-image-processor',
-    col1Image1: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=840&q=80',
-    col1Image2: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=840&q=80',
-    col2Image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=840&q=80',
+    // Document/resume analysis + microphone/speech + serverless function code
+    col1Image1: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=840&q=80',
+    col1Image2: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=840&q=80',
+    col2Image: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=840&q=80',
   },
 ];
 

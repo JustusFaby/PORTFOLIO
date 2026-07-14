@@ -1,29 +1,29 @@
 import { useEffect, useRef, useState } from 'react';
 
 const TECH_TILES = [
-  // Row 1 — cloud dashboards & infra
-  { src: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=840&q=80', label: 'Cloud Architecture' },
-  { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=840&q=80', label: 'Server Infrastructure' },
-  { src: 'https://images.unsplash.com/photo-1640158615573-cd28feb1bf4e?w=840&q=80', label: 'Kubernetes Cluster' },
-  { src: 'https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=840&q=80', label: 'DevOps Pipeline' },
-  { src: 'https://images.unsplash.com/photo-1551808525-51a94da548ce?w=840&q=80', label: 'Monitoring Dashboard' },
-  { src: 'https://images.unsplash.com/photo-1524234107056-1c1f48f64ab8?w=840&q=80', label: 'Terminal' },
+  // Row 1 — code editors, terminals, infrastructure, CI/CD
+  { src: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=840&q=80', label: 'Code Editor' },
   { src: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=840&q=80', label: 'Data Center' },
-  { src: 'https://images.unsplash.com/photo-1603695821069-2fde766e5f50?w=840&q=80', label: 'CI/CD Pipeline' },
-  { src: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=840&q=80', label: 'Cloud Storage' },
-  { src: 'https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=840&q=80', label: 'Network Topology' },
-  { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=840&q=80', label: 'DevOps Team' },
-  // Row 2
-  { src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=840&q=80', label: 'Code Review' },
-  { src: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=840&q=80', label: 'Fiber Network' },
-  { src: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=840&q=80', label: 'AI Infrastructure' },
+  { src: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=840&q=80', label: 'Terminal / IaC' },
   { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=840&q=80', label: 'Analytics Dashboard' },
-  { src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=840&q=80', label: 'Team Collaboration' },
+  { src: 'https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=840&q=80', label: 'Git / Version Control' },
+  { src: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=840&q=80', label: 'Metrics & Monitoring' },
+  { src: 'https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=840&q=80', label: 'JavaScript / Node' },
+  { src: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=840&q=80', label: 'Network Infrastructure' },
+  { src: 'https://images.unsplash.com/photo-1666875753105-c63a6f3bdc86?w=840&q=80', label: 'Cloud Dashboard' },
+  { src: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=840&q=80', label: 'Document Processing' },
+  { src: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=840&q=80', label: 'Security & DevSecOps' },
+  // Row 2 — servers, cloud platforms, deployments, monitoring
+  { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=840&q=80', label: 'Server Racks' },
+  { src: 'https://images.unsplash.com/photo-1589254065878-42c9da997008?w=840&q=80', label: 'Speech / Transcribe' },
+  { src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=840&q=80', label: 'Team Collaboration' },
   { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=840&q=80', label: 'System Monitoring' },
-  { src: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=840&q=80', label: 'Security Ops' },
-  { src: 'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=840&q=80', label: 'Cloud Computing' },
-  { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=840&q=80', label: 'Infrastructure Team' },
-  { src: 'https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?w=840&q=80', label: 'Deployment' },
+  { src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=840&q=80', label: 'DevOps Workflow' },
+  { src: 'https://images.unsplash.com/photo-1573164574572-cb89e39749b4?w=840&q=80', label: 'Cloud Engineering' },
+  { src: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?w=840&q=80', label: 'Agile / Scrum' },
+  { src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?w=840&q=80', label: 'Development' },
+  { src: 'https://images.unsplash.com/photo-1600267204091-5c1ab8b10c02?w=840&q=80', label: 'Deployment Pipeline' },
+  { src: 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=840&q=80', label: 'Cloud Storage' },
 ];
 
 const ROW_1 = TECH_TILES.slice(0, 11);
